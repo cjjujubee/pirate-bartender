@@ -24,6 +24,7 @@ var Drink = function(ingredients) {
     this.fruity = ingredients.fruity;
 };
 
+//picks which ingredient from the pantry to use
 var randomNumber = function() {
     var newNumber = Math.floor((Math.random() * 3) + 0);
     return newNumber

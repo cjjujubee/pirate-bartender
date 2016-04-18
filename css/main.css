@@ -2,19 +2,15 @@
 
 body {
   background: url(bg.jpg) center center/cover no-repeat fixed;
-  background-color: salmon;
+  background-color: black;
   font-family:'Pirata One';
+  text-align: center;
 }
 
-/*.overlay {*/
-/*  margin: 0 auto;*/
-/*  position: absolute;*/
-/*  top: 50px;*/
-/*  left: 50px;*/
-/*  bottom:50px;*/
-/*  right:50px;*/
-/*  width: 80%;*/
-/*  height: 80%;*/
-/*  background: url("overlay.jpg") center center/cover no-repeat;*/
+.title {
+	font-size: 3em;
+}
 
-/*}*/
+form {
+	font-size: 1.5em;
+}
