@@ -11,7 +11,6 @@ var answers = {
 }
 
 
-
 var ingredients = {
     strong: ['Glug of rum', 'slug of whisky', 'splash of gin'],
     salty: ['Olive on a stick', 'salt-dusted rim', 'rasher of bacon'],
@@ -29,69 +28,33 @@ var Drink = function(ingredients) {
     this.fruity = ingredients.fruity;
 };
 
-var randomNumber = function(){
+var randomNumber = function() {
     var newNumber = Math.floor((Math.random() * 3) + 0);
     return newNumber
 
-}; 
+};
 
-var yerdrink = new Drink({strong: ingredients.strong[randomNumber()], 
-                        salty: ingredients.salty[randomNumber()], 
-                        bitter: ingredients.bitter[randomNumber()], 
-                        sweet: ingredients.sweet[randomNumber()], 
-                        fruity: ingredients.fruity[randomNumber()]
-                        });
+var yerdrink = new Drink({
+    strong: ingredients.strong[randomNumber()],
+    salty: ingredients.salty[randomNumber()],
+    bitter: ingredients.bitter[randomNumber()],
+    sweet: ingredients.sweet[randomNumber()],
+    fruity: ingredients.fruity[randomNumber()]
+});
 
+$('.strongQuestion h3').text(questions.strong);
+$('.saltyQuestion h3').text(questions.salty);
+$('.bitterQuestion h3').text(questions.bitter);
+$('.sweetQuestion h3').text(questions.sweet);
+$('.fruityQuestion h3').text(questions.fruity);
 
+$(document).ready(function(){
 
-
-// console.log(ingredients.strong[randomNumber()])
-// console.log(ingredients.salty[randomNumber()])
-
-// console.log(ingredients.bitter[randomNumber()])
-
-// console.log(ingredients.sweet[randomNumber()])
-
-// console.log(ingredients.fruity[randomNumber()])
-
-
-
-
-
-// var Person = function(options) {
-//     this.name = options.name;
-//     this.age = options.age;
-//     this.place = options.place;
-// };
-
-// // Note the new
-// var taylor = new Person({name: 'Taylor', age: 22, place: 'Houston'});
-
-
-// var Person = {
-//     name: 'John Doe',
-//     age: 22,
-//     init: function(name, age) {
-//         this.name = name;
-//         this.age = age;
-//     }
-// };
-
-
-// var taylor = Object.create(Person);
-// taylor.init('Taylor', 22);
-
-// var Person = function(name, age) {
-//     this.name = name;
-//     this.age = age;
-// };strong
-
-
-
-// // Note the new
-// var taylor = new Person('Taylor', 22);
-
-// $(function() {
-
-// });ingre
-// /
+    $('#submitButton').click(function(event) {
+    	event.preventDefault();
+    
+    	//captures user selection
+    	var currentUserChoice = $(".strongQuestion input:checked").val();
+    	console.log(currentUserChoice);
+        });
+});

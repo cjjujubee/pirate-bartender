@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+	<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Pirate Bartender</title>
@@ -7,8 +7,71 @@
 
 </head>
 <body>
+	<div class="overlay"></div>
 	<h1>How do you like yer drinks?</h1>
-	<div class="drinkQuestion"><h2></h2></div>
+	<div><h3 class="drinkQuestion"></h3></div>
+	<span>
+	  	<h5 id="question"></h5>
+	     <form action="#" class="drinkQuestions">
+		    <div class="strongQuestion">
+		    	<h3></h3>
+			    <p>
+			      <label for="answer1" id="choice1" >Ahoy!</label>
+			      <input name="strongChoice" type="radio" value="true"/>
+			    </p>
+			    <p>
+			      <label for="answer1" id="choice1" >Blegh!!</label>
+			      <input name="strongChoice" type="radio" value="false"/>
+			    </p>	
+		    </div>
+		    <div class="strongQuestion">
+		     <h3></h3>
+			    <p>
+			      <label for="answer1" id="choice1" >Ahoy!</label>
+			      <input name="saltyChoice" type="radio" value="true"/>
+			    </p>
+			    <p>
+			      <label for="answer1" id="choice1" >Blegh!!</label>
+			      <input name="saltyChoice" type="radio" value="false"/>
+			    </p>
+		    </div>
+		    <div class="bitterQuestion">
+		    <h3></h3>
+			    <p>
+			      <label for="answer1"  >Ahoy!</label>
+			      <input name="bitterChoice" type="radio" value="true"/>
+			    </p>
+			    <p>
+			      <label for="answer1"  >Blegh!!</label>
+			      <input name="bitterChoice" type="radio" value="false"/>
+			    </p>	
+		    </div>
+		    <div class="sweetQuestion">
+		    <h3></h3>
+			    <p>
+			      <label for="answer1">Ahoy!</label>
+			      <input name="sweetChoice" type="radio" value="true"/>
+			    </p>
+			    <p>
+			      <label for="answer1">Blegh!!</label>
+			      <input name="sweetChoice" type="radio" value="false"/>
+			    </p>	
+		    </div>
+		    <div class="fruityQuestion">
+			<h3></h3>
+			    <p>
+			      <label for="answer1">Ahoy!</label>
+			      <input name="fruityChoice" type="radio" value="true"/>
+			    </p>
+			    <p>
+			      <label for="answer1">Blegh!!</label>
+			      <input name="fruityChoice" type="radio" value="false"/>
+			    </p>	
+		    </div>
+		    <button type="submit" name="userGuess" id="submitButton">Submit
+			</button>
+	  	</form>
+	  </span>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
