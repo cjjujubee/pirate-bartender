@@ -6,11 +6,6 @@ var questions = [
     '5. Are ye one for a fruity finish?',
 ]
 
-var answers = {
-    options: ['Ahoy!', 'Bleh!'],
-}
-
-
 var ingredients = {
     strong: ['Glug of rum', 'slug of whisky', 'splash of gin'],
     salty: ['Olive on a stick', 'salt-dusted rim', 'rasher of bacon'],
@@ -21,6 +16,7 @@ var ingredients = {
 
 
 var Drink = function(ingredients) {
+    console.log(ingredients);
     this.strong = ingredients.strong;
     this.salty = ingredients.salty;
     this.bitter = ingredients.bitter;
@@ -34,36 +30,38 @@ var randomNumber = function() {
 
 };
 
-var yerdrink = new Drink({
-    strong: ingredients.strong[randomNumber()],
-    salty: ingredients.salty[randomNumber()],
-    bitter: ingredients.bitter[randomNumber()],
-    sweet: ingredients.sweet[randomNumber()],
-    fruity: ingredients.fruity[randomNumber()]
-});
-
-$('.strongQuestion h3').text(questions.strong);
-$('.saltyQuestion h3').text(questions.salty);
-$('.bitterQuestion h3').text(questions.bitter);
-$('.sweetQuestion h3').text(questions.sweet);
-$('.fruityQuestion h3').text(questions.fruity);
+// $('.strongQuestion h3').text(questions.strong);
+// $('.saltyQuestion h3').text(questions.salty);
+// $('.bitterQuestion h3').text(questions.bitter);
+// $('.sweetQuestion h3').text(questions.sweet);
+// $('.fruityQuestion h3').text(questions.fruity);
 
 
 $(document).ready(function(){
 
-//appends questions to HTML
+    //appends questions to HTML
     var bartendingQuestions = "";
     for (var i = 0; i < questions.length; i++) {
-        bartendingQuestions += '<p>' + questions[i] + '<br> Ahoy! <input name=q' + i + '   value="true" type=radio> <br> Blegh!! <input name=q' + i + ' type=radio value="false"></p>'
+        bartendingQuestions += '<p>' + questions[i] + '<br> Ahoy! <input name=q' + i + '   value="true" type=radio> <br> Blegh!! <input name=q' + i + ' type=radio value="false"></p>';
     }
     
-    $('body').append("<form id='bartender'>" + bartendingQuestions + "</form>");
+    $('#drinkQuestions').append("<div>" + bartendingQuestions + "</div>");
   
-    $('#submitButton').click(function(event) {
+    $('#bartender').submit(function(event) {
     	event.preventDefault();
     
     	//captures user selection
-    	var currentUserChoice = $(".strongQuestion input:checked").val();
+    	var currentUserChoice = $('form').serializeArray();
     	console.log(currentUserChoice);
+
+        var yerdrink = new Drink({
+            strong: (currentUserChoice[0].value === "true") ? ingredients.strong[randomNumber()] : undefined,
+            salty: (currentUserChoice[0].value === "true") ? ingredients.salty[randomNumber()] : undefined,
+            bitter: (currentUserChoice[0].value === "true") ? ingredients.bitter[randomNumber()] : undefined,
+            sweet: (currentUserChoice[0].value === "true") ? ingredients.sweet[randomNumber()] : undefined,
+            fruity: (currentUserChoice[0].value === "true") ? ingredients.fruity[randomNumber()] : undefined,
         });
+    });
+
 });
+
