@@ -54,7 +54,7 @@ $(document).ready(function(){
 //appends questions to HTML
     var bartendingQuestions = "";
     for (var i = 0; i < questions.length; i++) {
-        bartendingQuestions += '<p>' + questions[i] + '<br> Ahoy! <input name=' + questions[i] + '   value="true" type=radio> <br> Blegh!! <input name=' + questions[i] + ' type=radio value="false"></p>'
+        bartendingQuestions += '<p>' + questions[i] + '<br> Ahoy! <input name=q' + i + '   value="true" type=radio> <br> Blegh!! <input name=q' + i + ' type=radio value="false"></p>'
     }
     
     $('body').append("<form id='bartender'>" + bartendingQuestions + "</form>");
