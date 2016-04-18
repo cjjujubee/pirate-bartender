@@ -1,10 +1,10 @@
-var questions = {
-    strong: 'Do ye like yer drinks strong?',
-    salty: 'Do ye like it with a salty tang?',
-    bitter: 'Are ye a lubber who likes it bitter?',
-    sweet: 'Would ye like a bit of sweetness with yer poison?',
-    fruity: 'Are ye one for a fruity finish?',
-}
+var questions = [
+    '1. Do ye like yer drinks strong?',
+    '2. Do ye like it with a salty tang?',
+    '3. Are ye a lubber who likes it bitter?',
+    '4. Would ye like a bit of sweetness with yer poison?',
+    '5. Are ye one for a fruity finish?',
+]
 
 var answers = {
     options: ['Ahoy!', 'Bleh!'],
@@ -48,8 +48,17 @@ $('.bitterQuestion h3').text(questions.bitter);
 $('.sweetQuestion h3').text(questions.sweet);
 $('.fruityQuestion h3').text(questions.fruity);
 
+
 $(document).ready(function(){
 
+//appends questions to HTML
+    var bartendingQuestions = "";
+    for (var i = 0; i < questions.length; i++) {
+        bartendingQuestions += '<p>' + questions[i] + '<br> Ahoy! <input name=' + questions[i] + '   value="true" type=radio> <br> Blegh!! <input name=' + questions[i] + ' type=radio value="false"></p>'
+    }
+    
+    $('body').append("<form id='bartender'>" + bartendingQuestions + "</form>");
+  
     $('#submitButton').click(function(event) {
     	event.preventDefault();
     
