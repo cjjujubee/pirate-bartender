@@ -10,6 +10,8 @@ var answers = {
     options: ['Ahoy!', 'Bleh!'],
 }
 
+
+
 var ingredients = {
     strong: ['Glug of rum', 'slug of whisky', 'splash of gin'],
     salty: ['Olive on a stick', 'salt-dusted rim', 'rasher of bacon'],
@@ -23,9 +25,38 @@ var Drink = function(ingredients) {
     this.strong = ingredients.strong;
     this.salty = ingredients.salty;
     this.bitter = ingredients.bitter;
+    this.sweet = ingredients.sweet;
+    this.fruity = ingredients.fruity;
 };
 
-var yerdrink = new Drink({strong: ingredients.strong[2], salty: ingredients.salty[1], bitter: ingredients.bitter[0]} )
+var randomNumber = function(){
+    var newNumber = Math.floor((Math.random() * 3) + 0);
+    return newNumber
+
+}; 
+
+var yerdrink = new Drink({strong: ingredients.strong[randomNumber()], 
+                        salty: ingredients.salty[randomNumber()], 
+                        bitter: ingredients.bitter[randomNumber()], 
+                        sweet: ingredients.sweet[randomNumber()], 
+                        fruity: ingredients.fruity[randomNumber()]
+                        });
+
+
+
+
+// console.log(ingredients.strong[randomNumber()])
+// console.log(ingredients.salty[randomNumber()])
+
+// console.log(ingredients.bitter[randomNumber()])
+
+// console.log(ingredients.sweet[randomNumber()])
+
+// console.log(ingredients.fruity[randomNumber()])
+
+
+
+
 
 // var Person = function(options) {
 //     this.name = options.name;
