@@ -30,13 +30,6 @@ var randomNumber = function() {
 
 };
 
-// $('.strongQuestion h3').text(questions.strong);
-// $('.saltyQuestion h3').text(questions.salty);
-// $('.bitterQuestion h3').text(questions.bitter);
-// $('.sweetQuestion h3').text(questions.sweet);
-// $('.fruityQuestion h3').text(questions.fruity);
-
-
 $(document).ready(function(){
 
     //appends questions to HTML
@@ -54,7 +47,8 @@ $(document).ready(function(){
     	var currentUserChoice = $('form').serializeArray();
     	console.log(currentUserChoice);
 
-        var yerdrink = new Drink({
+        //constructs drink based on user input
+        var yerDrink = new Drink({ 
             strong: (currentUserChoice[0].value === "true") ? ingredients.strong[randomNumber()] : undefined,
             salty: (currentUserChoice[0].value === "true") ? ingredients.salty[randomNumber()] : undefined,
             bitter: (currentUserChoice[0].value === "true") ? ingredients.bitter[randomNumber()] : undefined,
