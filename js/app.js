@@ -19,11 +19,48 @@ var ingredients = {
 }
 
 
-var Drink = function(strong, salty, bitter, sweet, fruity) {
-    this.flavor = strong;
-    this.flavor2 = salty;
-    
+var Drink = function(ingredients) {
+    this.strong = ingredients.strong;
+    this.salty = ingredients.salty;
+    this.bitter = ingredients.bitter;
 };
 
-// Note the new
-var taylor = new Drink('Taylor', 22);
+var yerdrink = new Drink({strong: ingredients.strong[2], salty: ingredients.salty[1], bitter: ingredients.bitter[0]} )
+
+// var Person = function(options) {
+//     this.name = options.name;
+//     this.age = options.age;
+//     this.place = options.place;
+// };
+
+// // Note the new
+// var taylor = new Person({name: 'Taylor', age: 22, place: 'Houston'});
+
+
+// var Person = {
+//     name: 'John Doe',
+//     age: 22,
+//     init: function(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+// };
+
+
+// var taylor = Object.create(Person);
+// taylor.init('Taylor', 22);
+
+// var Person = function(name, age) {
+//     this.name = name;
+//     this.age = age;
+// };strong
+
+
+
+// // Note the new
+// var taylor = new Person('Taylor', 22);
+
+// $(function() {
+
+// });ingre
+// /
