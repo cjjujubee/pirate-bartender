@@ -65,9 +65,9 @@ $(document).ready(function(){
         finalDrink += getIngredientHTML(yerDrink.sweet);
         finalDrink += getIngredientHTML(yerDrink.fruity);
 
-        $('.finalDrink').append('<div>' + finalDrink + '</div>');
+        $('.finalDrink').append(finalDrink);
 
-        $('.finalDrink').show();
+        $('.finalDrinkSection').show();
         $('#bartender').hide();
 
     });
@@ -77,3 +77,12 @@ $(document).ready(function(){
 var getIngredientHTML = function(ingredient) {
     return ingredient ? ingredient + '<br>' : "";
 }
+
+
+//reset button
+$('.restart').click(function() {
+    $('#bartender').show();
+    $('.finalDrinkSection').hide();
+    $('.finalDrink').empty();
+    $('input').attr('checked',false);
+});
