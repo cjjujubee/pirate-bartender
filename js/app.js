@@ -27,8 +27,7 @@ var Drink = function(ingredients) {
 //picks which ingredient from the pantry to use
 var randomNumber = function() {
     var newNumber = Math.floor((Math.random() * 3) + 0);
-    return newNumber
-
+    return newNumber;
 };
 
 $(document).ready(function(){
@@ -51,13 +50,30 @@ $(document).ready(function(){
         //constructs drink based on user input
         var yerDrink = new Drink({ 
             strong: (currentUserChoice[0].value === "true") ? ingredients.strong[randomNumber()] : undefined,
-            salty: (currentUserChoice[0].value === "true") ? ingredients.salty[randomNumber()] : undefined,
-            bitter: (currentUserChoice[0].value === "true") ? ingredients.bitter[randomNumber()] : undefined,
-            sweet: (currentUserChoice[0].value === "true") ? ingredients.sweet[randomNumber()] : undefined,
-            fruity: (currentUserChoice[0].value === "true") ? ingredients.fruity[randomNumber()] : undefined,
+            salty: (currentUserChoice[1].value === "true") ? ingredients.salty[randomNumber()] : undefined,
+            bitter: (currentUserChoice[2].value === "true") ? ingredients.bitter[randomNumber()] : undefined,
+            sweet: (currentUserChoice[3].value === "true") ? ingredients.sweet[randomNumber()] : undefined,
+            fruity: (currentUserChoice[4].value === "true") ? ingredients.fruity[randomNumber()] : undefined,
         });
+
+        //shows final drink
+
+        var finalDrink = "";
+        finalDrink += getIngredientHTML(yerDrink.strong);
+        finalDrink += getIngredientHTML(yerDrink.salty);
+        finalDrink += getIngredientHTML(yerDrink.bitter);
+        finalDrink += getIngredientHTML(yerDrink.sweet);
+        finalDrink += getIngredientHTML(yerDrink.fruity);
+
+        $('.finalDrink').append('<div>' + finalDrink + '</div>');
+
+        $('.finalDrink').show();
+        $('#bartender').hide();
+
     });
 
 });
 
-//testing
+var getIngredientHTML = function(ingredient) {
+    return ingredient ? ingredient + '<br>' : "";
+}
